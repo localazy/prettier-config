@@ -1,0 +1,68 @@
+{
+  "name": "@localazy/prettier-config",
+  "version": "1.0.0-beta.0",
+  "description": "Localazy Prettier configuration",
+  "keywords": [
+    "prettier",
+    "prettier-config",
+    "localazy"
+  ],
+  "homepage": "https://github.com/localazy/prettier-config#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/localazy/prettier-config.git"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Localazy",
+    "email": "team@localazy.com",
+    "url": "https://localazy.com"
+  },
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "check": "pnpm run prettier && pnpm run typecheck && pnpm build",
+    "check:fix": "pnpm run prettier:fix",
+    "dev": "tsup --watch",
+    "prepare": "husky && pnpm build",
+    "prepublishOnly": "pnpm build",
+    "prettier": "prettier --check --cache .",
+    "prettier:fix": "prettier --write .",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "prettier-plugin-organize-imports": "^4.1.0",
+    "prettier-plugin-packagejson": "^2.5.9",
+    "prettier-plugin-sh": "^0.15.0"
+  },
+  "devDependencies": {
+    "husky": "^9.1.7",
+    "jiti": "^2.4.2",
+    "prettier": "^3.5.2",
+    "tsup": "^8.4.0",
+    "typescript": "^5.7.3"
+  },
+  "peerDependencies": {
+    "prettier": "^3.5.2"
+  },
+  "packageManager": "pnpm@10.3.0"
+}
