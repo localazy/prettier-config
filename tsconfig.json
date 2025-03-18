@@ -1,10 +1,10 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
   "compilerOptions": {
-    "target": "ESNext",
-    "module": "ESNext",
+    "target": "ES2022",
+    "module": "Preserve",
     "moduleResolution": "bundler",
-    "lib": ["esnext"],
+    "declaration": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "isolatedModules": true,
@@ -12,21 +12,31 @@
     "sourceMap": true,
     "resolveJsonModule": true,
     "skipLibCheck": true,
-    "pretty": true,
     "strict": true,
     "noUncheckedIndexedAccess": true,
     "noImplicitOverride": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
-    "declaration": true,
-    "declarationMap": true,
     "outDir": "${configDir}/dist",
-    "rootDir": "${configDir}",
-    "baseUrl": ".",
+    "baseUrl": "${configDir}",
     "paths": {
       "@/*": ["./src/*"]
-    }
+    },
+    "types": ["@types/node"]
   },
-  "include": ["${configDir}/src", "${configDir}*.config.ts", "${configDir}*.config.cts", "${configDir}*.config.mts"],
-  "exclude": ["${configDir}/node_modules", "${configDir}/dist", "${configDir}/coverage", "${configDir}/typedoc"]
+  "include": [
+    "${configDir}/src",
+    "${configDir}/*.config.ts",
+    "${configDir}/*.config.tsx",
+    "${configDir}/*.config.cts",
+    "${configDir}/*.config.mts",
+    "${configDir}/package.json"
+  ],
+  "exclude": [
+    "${configDir}/node_modules",
+    "${configDir}/dist",
+    "${configDir}/coverage",
+    "${configDir}/html",
+    "${configDir}/typedoc"
+  ]
 }

@@ -22,27 +22,27 @@
   "exports": {
     ".": {
       "import": {
-        "types": "./dist/index.d.ts",
-        "default": "./dist/index.js"
+        "types": "./dist/prettier-config.d.ts",
+        "default": "./dist/prettier-config.js"
       },
       "require": {
-        "types": "./dist/index.d.cts",
-        "default": "./dist/index.cjs"
+        "types": "./dist/prettier-config.d.ts",
+        "default": "./dist/prettier-config.cjs"
       }
     },
     "./package.json": "./package.json"
   },
-  "main": "./dist/index.js",
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "main": "./dist/prettier-config.cjs",
+  "module": "./dist/prettier-config.js",
+  "types": "./dist/prettier-config.d.ts",
   "files": [
     "dist"
   ],
   "scripts": {
-    "build": "tsup",
+    "build": "vite build",
     "check": "pnpm run prettier && pnpm run typecheck && pnpm build",
     "check:fix": "pnpm run prettier:fix",
-    "dev": "tsup --watch",
+    "dev": "vite build --watch",
     "prepare": "husky && pnpm build",
     "prepublishOnly": "pnpm build",
     "prettier": "prettier --check --cache .",
@@ -55,11 +55,14 @@
     "prettier-plugin-sh": "^0.15.0"
   },
   "devDependencies": {
+    "@types/node": "^22.13.10",
     "husky": "^9.1.7",
     "jiti": "^2.4.2",
     "prettier": "^3.5.3",
-    "tsup": "^8.4.0",
-    "typescript": "^5.8.2"
+    "typescript": "^5.8.2",
+    "vite": "^6.2.2",
+    "vite-plugin-dts": "^4.5.3",
+    "vite-plugin-externalize-deps": "^0.9.0"
   },
   "peerDependencies": {
     "prettier": "^3.5.2"
