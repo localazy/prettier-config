@@ -24,15 +24,10 @@
       "import": {
         "types": "./dist/prettier-config.d.ts",
         "default": "./dist/prettier-config.js"
-      },
-      "require": {
-        "types": "./dist/prettier-config.d.ts",
-        "default": "./dist/prettier-config.cjs"
       }
     },
     "./package.json": "./package.json"
   },
-  "main": "./dist/prettier-config.cjs",
   "module": "./dist/prettier-config.js",
   "types": "./dist/prettier-config.d.ts",
   "files": [
@@ -50,17 +45,18 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-organize-imports": "^4.1.0",
     "prettier-plugin-packagejson": "^2.5.10",
-    "prettier-plugin-sh": "^0.15.0"
+    "prettier-plugin-sh": "^0.17.2"
   },
   "devDependencies": {
-    "@types/node": "^22.13.10",
+    "@types/node": "^22.15.2",
     "husky": "^9.1.7",
     "jiti": "^2.4.2",
     "prettier": "^3.5.3",
-    "typescript": "^5.8.2",
-    "vite": "^6.2.2",
+    "typescript": "^5.8.3",
+    "vite": "^6.3.3",
     "vite-plugin-dts": "^4.5.3",
     "vite-plugin-externalize-deps": "^0.9.0"
   },
