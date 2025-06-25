@@ -17,7 +17,7 @@ export default defineConfig({
     lib: {
       entry: 'src/main.ts',
       fileName: 'prettier-config',
-      formats: ['es'],
+      formats: ['es', 'cjs'],
     },
   },
 
