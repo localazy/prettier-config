@@ -32,7 +32,7 @@
     },
     "./package.json": "./package.json"
   },
-  "main": "./dist/prettier-config.js",
+  "main": "./dist/prettier-config.cjs",
   "module": "./dist/prettier-config.js",
   "types": "./dist/prettier-config.d.ts",
   "files": [
